@@ -35,17 +35,18 @@
   "homepage": "https://github.com/YOUR_USERNAME/stacksagent-mcp#readme",
   "license": "MIT",
   "dependencies": {
+    "@bitflowlabs/core-sdk": "^2.4.0",
     "@modelcontextprotocol/sdk": "^1.0.4",
-    "@stacks/transactions": "^6.16.1",
+    "@stacks/encryption": "^6.16.1",
     "@stacks/network": "^6.16.1",
     "@stacks/stacks-blockchain-api-types": "^7.12.0",
-    "@stacks/encryption": "^6.16.1",
+    "@stacks/transactions": "^6.16.1",
     "axios": "^1.7.9",
     "bip39": "^3.1.0",
+    "bns-v2-sdk": "^2.1.0",
     "dotenv": "^16.4.7",
-    "zod": "^3.24.1",
-    "@bitflowlabs/core-sdk": "^2.4.0",
-    "tslib": "^2.7.0"
+    "tslib": "^2.7.0",
+    "zod": "^3.24.1"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
