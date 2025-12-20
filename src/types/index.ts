@@ -162,3 +162,103 @@ export interface EncryptedKeystore {
   };
   address: string;
 }
+
+// Clarity contract types
+export interface ClarityContract {
+  name: string;
+  code: string;
+  analysis?: ContractAnalysis;
+}
+
+export interface ContractAnalysis {
+  syntaxValid: boolean;
+  functions: FunctionInfo[];
+  dataVars: DataVarInfo[];
+  maps: MapInfo[];
+  traits: string[];
+  dependencies: string[];
+  estimatedComplexity: 'low' | 'medium' | 'high';
+}
+
+export interface FunctionInfo {
+  name: string;
+  type: 'public' | 'private' | 'read-only';
+  parameters: ParameterInfo[];
+  returnType: string;
+}
+
+export interface ParameterInfo {
+  name: string;
+  type: string;
+}
+
+export interface DataVarInfo {
+  name: string;
+  type: string;
+  initialValue: string;
+}
+
+export interface MapInfo {
+  name: string;
+  keyType: string;
+  valueType: string;
+}
+
+export interface AuditReport {
+  contractName: string;
+  timestamp: string;
+  summary: {
+    totalIssues: number;
+    critical: number;
+    high: number;
+    medium: number;
+    low: number;
+    informational: number;
+  };
+  securityIssues: SecurityIssue[];
+  bestPracticeIssues: BestPracticeIssue[];
+  optimizationSuggestions: OptimizationSuggestion[];
+  score: number;
+  recommendation: 'approved' | 'needs-review' | 'critical-issues';
+}
+
+export interface SecurityIssue {
+  severity: 'critical' | 'high' | 'medium' | 'low';
+  category: string;
+  title: string;
+  description: string;
+  location: {
+    line?: number;
+    function?: string;
+  };
+  recommendation: string;
+  cwe?: string;
+}
+
+export interface BestPracticeIssue {
+  severity: 'medium' | 'low' | 'informational';
+  title: string;
+  description: string;
+  location: {
+    line?: number;
+    function?: string;
+  };
+  recommendation: string;
+}
+
+export interface OptimizationSuggestion {
+  title: string;
+  description: string;
+  estimatedGasSavings?: string;
+  location: {
+    line?: number;
+    function?: string;
+  };
+}
+
+export interface ContractGenerationOptions {
+  contractType: 'fungible-token' | 'non-fungible-token' | 'vault' | 'dao' | 'marketplace' | 'custom';
+  features?: string[];
+  includeTests?: boolean;
+  includeComments?: boolean;
+}

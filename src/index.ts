@@ -14,12 +14,14 @@ import { DexService } from './services/dex.js';
 import { StackingService } from './services/stacking.js';
 import { PortfolioService } from './services/portfolio.js';
 import { BnsService } from './services/bns.js';
+import { ClarityService } from './services/clarity.js';
 import { configManager } from './utils/config.js';
 
 import { walletTools } from './tools/wallet-tools.js';
 import { marketTools } from './tools/market-tools.js';
 import { stackingAndPortfolioTools } from './tools/stacking-tools.js';
 import { bnsTools } from './tools/bns-tools.js';
+import { clarityTools } from './tools/clarity-tools.js';
 
 /**
  * Main MCP Server for Stacks blockchain operations
@@ -32,6 +34,7 @@ class StacksMCPServer {
   private stackingService: StackingService;
   private portfolioService: PortfolioService;
   private bnsService: BnsService;
+  private clarityService: ClarityService;
   private tools: Map<string, any>;
 
   constructor() {
@@ -56,6 +59,7 @@ class StacksMCPServer {
     this.stackingService = new StackingService(config.network);
     this.portfolioService = new PortfolioService(this.walletService, config.network);
     this.bnsService = new BnsService(config.network);
+    this.clarityService = new ClarityService(config.network);
 
     // Initialize tools map
     this.tools = new Map();
@@ -94,6 +98,12 @@ class StacksMCPServer {
     // BNS tools
     const bns = bnsTools(this.bnsService);
     for (const [name, tool] of Object.entries(bns)) {
+      this.tools.set(name, tool);
+    }
+
+    // Clarity tools
+    const clarity = clarityTools(this.clarityService);
+    for (const [name, tool] of Object.entries(clarity)) {
       this.tools.set(name, tool);
     }
   }
