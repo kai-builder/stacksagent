@@ -1,3 +1,8 @@
+<!--
+  This README is the single source of truth.
+  It's automatically copied to cli/README.md during `npm run build`
+-->
+
 # Stacks Agent
 
 > AI Skill for building Stacks blockchain applications - Bitcoin's most powerful smart contract layer
@@ -10,20 +15,35 @@ An intelligent AI assistant that provides development guidance for Clarity smart
 
 ## ✨ Features
 
+**495+ Knowledge Base Entries Across 15 Domains:**
+
+### Core Language & Tools (175 entries)
 - **🔷 61 Clarity Functions** - Complete language reference with examples
+- **⚛️ 75 Stacks.js Utilities** - Wallet, transactions, CV constructors, API integration
 - **📋 14 Contract Templates** - SIP-010, SIP-009, DAO, Vault, Marketplace, Stacking
-- **🔐 15 Security Patterns** - Common vulnerabilities and fixes
-- **🔄 15 DeFi Protocols** - Alex, Velar, Bitflow, Zest, StackingDAO, Boost, Faktory
-- **⚛️ 30 Stacks.js Snippets** - Wallet, transactions, API integration
-- **🌐 10 BNS Operations** - Name registration and resolution
-- **💰 15 Stacking Guides** - PoX stacking and pool delegation
 - **🚀 25 Deployment Steps** - Testnet, mainnet, and devnet workflows
+
+### Domain-Specific Integrations (185 entries)
+- **🌐 21 BNS Operations** - Name registration, resolution (Clarity + JS + API)
+- **💰 25 Stacking Guides** - PoX stacking and pool delegation (Clarity + JS + API)
+- **🔄 25 DeFi Protocols** - Alex, Velar, Bitflow, Zest, StackingDAO (Clarity + JS + API)
+- **🎨 30 NFT Operations** - SIP-009, minting, marketplace patterns (Clarity + JS + API)
+- **💎 40 Token Operations** - SIP-010 fungible tokens, DeFi integrations (Clarity + JS + API)
+- **🔐 14 Authentication** - Gaia storage, wallet auth, JWT, token-gating (Clarity + JS + API)
+- **📊 30 Oracle Integration** - Pyth Network price feeds, VAA handling, Hermes API (Clarity + JS + API)
+
+### Advanced & Specialized (135 entries)
+- **🛡️ 15 Security Patterns** - Common vulnerabilities and secure implementations
+- **🎯 40 Advanced Patterns** - Pagination, SWR, presales, lotteries, vesting, CSV export
+- **🔗 30 Chainhooks** - Event indexing, webhooks, predicates, ordinals tracking
+- **🤖 50 Trading Bots** - Automated trading, wallet SDKs, Privy, bonding curves
 
 ## 🎯 Use Cases
 
 - Generate Clarity smart contracts from natural language
 - Audit contracts for security vulnerabilities
 - Integrate with DeFi protocols (swaps, liquidity, lending)
+- Integrate Pyth Network oracle for price feeds
 - Deploy to testnet/mainnet
 - Build dApps with Stacks.js
 - Implement stacking and BNS features
@@ -97,6 +117,7 @@ Reference in chat:
 "Build an NFT collection with royalties"
 "Audit this Clarity contract for security issues"
 "Show me how to integrate Alex swap in my dApp"
+"How do I get BTC/USD price from Pyth oracle?"
 "Deploy my contract to testnet"
 "How do I implement stacking in my app?"
 "Generate a DAO contract with proposal voting"

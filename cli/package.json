@@ -11,7 +11,8 @@
     "README.md"
   ],
   "scripts": {
-    "build": "tsc && npm run copy-assets",
+    "build": "npm run copy-readme && tsc && npm run copy-assets",
+    "copy-readme": "cp ../README.md ./README.md",
     "copy-assets": "cp -r src/assets dist/",
     "dev": "tsc --watch",
     "prepublishOnly": "npm run build"
