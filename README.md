@@ -21,7 +21,7 @@ An intelligent AI assistant that provides development guidance for Clarity smart
 - 🚫 **Zero Deprecated Code** - All modern @stacks/connect v7+ API patterns
 - 🔒 **Security-First Examples** - Post-conditions, error handling, real vulnerabilities
 
-**495+ Knowledge Base Entries Across 15 Domains:**
+**557+ Knowledge Base Entries Across 15 Domains:**
 
 ### Core Language & Tools (175 entries)
 - **🔷 61 Clarity Functions** - Complete language reference with examples
@@ -29,10 +29,10 @@ An intelligent AI assistant that provides development guidance for Clarity smart
 - **📋 14 Contract Templates** - SIP-010, SIP-009, DAO, Vault, Marketplace, Stacking
 - **🚀 25 Deployment Steps** - Testnet, mainnet, and devnet workflows
 
-### Domain-Specific Integrations (185 entries)
+### Domain-Specific Integrations (247 entries)
 - **🌐 21 BNS Operations** - Name registration, resolution (Clarity + JS + API)
 - **💰 25 Stacking Guides** - PoX stacking and pool delegation (Clarity + JS + API)
-- **🔄 25 DeFi Protocols** - Alex, Velar, Bitflow, Zest, StackingDAO (Clarity + JS + API)
+- **🔄 87 DeFi Protocols** - Alex, Velar, Bitflow, USDCx bridging, multi-DEX routing (Clarity + JS + API)
 - **🎨 30 NFT Operations** - SIP-009, minting, marketplace patterns (Clarity + JS + API)
 - **💎 40 Token Operations** - SIP-010 fungible tokens, DeFi integrations (Clarity + JS + API)
 - **🔐 14 Authentication** - Wallet auth, JWT, sessions, token-gating (**No Gaia** - deprecated) (Clarity + JS + API)
@@ -49,6 +49,8 @@ An intelligent AI assistant that provides development guidance for Clarity smart
 - Generate Clarity smart contracts from natural language
 - Audit contracts for security vulnerabilities
 - Integrate with DeFi protocols (swaps, liquidity, lending)
+- **Bridge USDC from Ethereum to Stacks (USDCx)**
+- **Swap USDCx across multiple DEXs (Bitflow, Alex, Velar)**
 - Integrate Pyth Network oracle for price feeds
 - Deploy to testnet/mainnet
 - Build dApps with Stacks.js
@@ -134,6 +136,16 @@ Reference in chat:
 "Show me how to integrate Pyth oracle for BTC/USD price"
 "How do I implement JWT authentication with wallet signatures?"
 "Show me a secure token transfer with post-conditions"
+```
+
+**USDCx Bridging & Multi-DEX (New in v1.6.0):**
+```
+"How do I bridge USDC from Ethereum to Stacks?"
+"Show me how to swap USDCx to STX on Bitflow"
+"How do I get quotes from Alex and Bitflow SDKs?"
+"Build a multi-token swap using Bitflow router"
+"What are the contract addresses for USDCx on mainnet?"
+"Show me a two-step swap pattern: USDCx -> STX -> ALEX"
 ```
 
 **With Relationships:**
@@ -310,8 +322,35 @@ Types, functions, control flow, arithmetic, comparisons, maps, tokens, STX opera
 - Medium: Input validation, front-running
 - Low: Code style, gas optimization
 
-### DeFi Protocols (15 entries)
+### DeFi Protocols (87 entries)
 Alex, Velar, Bitflow, Zest, StackingDAO, Boost, Faktory integration patterns
+
+### USDCx Bridging & Multi-DEX (New in v1.6.0)
+
+**Bridge Operations:**
+- Deposit USDC from Ethereum → mint USDCx on Stacks
+- Burn USDCx on Stacks → withdraw USDC on Ethereum
+- Address encoding (Stacks ↔ Ethereum)
+- Bridge timing: ~15 min deposit, ~60 min withdrawal
+
+**Multi-DEX Swap Routing:**
+- Bitflow: `swap-helper-a/b/c` for 2/3/4-hop swaps
+- Alex: `swap-helper`, `swap-helper-a` with factors
+- Velar: `path-apply` with tuple-based routing
+- Stableswap: stSTX↔STX, USDH↔USDCx
+
+**Quote APIs:**
+- Bitflow SDK: `getQuoteForRoute()`
+- Alex SDK: `getAmountTo()` with Currency enums
+- Fallback rates and price caching
+
+**Contract Addresses:**
+| Contract | Address |
+|----------|---------|
+| USDCx | `SP120SBRBQJ00MCWS7TM5R8WJNTTKD5K0HFRC2CNE.usdcx` |
+| Bitflow Router | `SM1793C4R5PZ4NS4VQ4WMP7SKKYVH8JZEWSZ9HCCR.router-stableswap-xyk-multihop-v-1-2` |
+| Alex AMM | `SP102V8P0F7JX67ARQ77WEA3D3CFB5XW39REDT0AM.amm-pool-v2-01` |
+| Velar | `SP20X3DC5R091J8B6YPQT638J8NR1W83KN6TN5BJY.path-apply_staging` |
 
 ### Stacks.js (30 entries)
 Wallet connection, transactions, Clarity values, API calls, post-conditions
@@ -366,6 +405,8 @@ node --version
 - [Velar DEX](https://app.velar.co)
 - [Bitflow DEX](https://app.bitflow.finance)
 - [Zest Protocol](https://www.zestprotocol.com)
+- [USDCx Bridge Docs](https://docs.stacks.co/more-guides/bridging-usdcx)
+- [Circle xReserve](https://www.circle.com)
 
 ## 🤝 Contributing
 
@@ -396,6 +437,12 @@ Built for the Stacks community with:
 - Twitter: [@kai_builder](https://twitter.com/kai_builder)
 
 ## 🎯 Roadmap
+
+### Completed (v1.6.0) ✅
+- [x] USDCx bridging from Ethereum (62 new entries)
+- [x] Multi-DEX swap routing (Bitflow, Alex, Velar)
+- [x] AMM quote API patterns (SDK integration)
+- [x] 557+ total knowledge base entries
 
 ### Completed (v2.0) ✅
 - [x] Multi-platform AI skill support (7 platforms)
