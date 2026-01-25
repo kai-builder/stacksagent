@@ -15,7 +15,7 @@ An intelligent AI assistant that provides development guidance for Clarity smart
 
 ## ✨ Features
 
-**v2.0 Highlights:**
+**Highlights:**
 - 🎯 **40 Production Code Examples** - Real code from live dApps (sbtc-market, stacksagent, STX City)
 - 🕸️ **100 Knowledge Relationships** - Connected concepts across domains
 - 🚫 **Zero Deprecated Code** - All modern @stacks/connect v7+ API patterns
